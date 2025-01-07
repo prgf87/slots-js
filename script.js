@@ -9,6 +9,20 @@
   document.querySelector('#spinner').addEventListener('click', spin);
   document.querySelector('#reseter').addEventListener('click', init);
 
+  function checkWin() {
+    const values = Array.from(doors).map(
+      (door) => door.querySelector('.boxes .box').textContent
+    );
+
+    const allMatch = values.every((val) => val === values[0]);
+
+    if (allMatch) {
+      setTimeout(() => {
+        alert('🎉 Congratulations! You won! 🎉');
+      }, 100);
+    }
+  }
+
   async function spin() {
     init(false, 1, 2);
     for (const door of doors) {
@@ -17,6 +31,8 @@
       boxes.style.transform = 'translateY(0)';
       await new Promise((resolve) => setTimeout(resolve, duration * 100));
     }
+
+    setTimeout(checkWin, 300);
   }
 
   function init(firstInit = true, groups = 1, duration = 1) {
@@ -84,7 +100,6 @@
       const i = Math.floor(Math.random() * m--);
       [arr[m], arr[i]] = [arr[i], arr[m]];
     }
-
     return arr;
   }
 

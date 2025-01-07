@@ -35,8 +35,8 @@ body {
 .door {
   background: #fafafa;
   box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4) inset;
-  width: 100px;
-  height: 150px;
+  width: 300px;
+  height: 450px;
   overflow: hidden;
   border-radius: 1ch;
   margin: 1ch;
@@ -50,7 +50,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
+  font-size: 9rem;
 }
 
 .buttons {
